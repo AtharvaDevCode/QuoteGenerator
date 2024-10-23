@@ -1,6 +1,6 @@
 body {
     font-family: 'Garamond', serif; /* Use a classic font */
-    background-image: url('medieval-bg.jpg'); /* Background image */
+    background-image: url('bg.jpg'); /* Background image */
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the image */
     color: #fff; /* Light text color for contrast */
