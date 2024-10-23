@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     font-family: 'Garamond', serif; /* Use a classic font */
     background-image: url('bg.jpg'); /* Background image */
@@ -18,7 +19,30 @@ body {
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.8); /* Stronger shadow for depth */
-    max-width: 600px; /* Set a max width */
+    max-width: 90%; /* Set a max width for mobile */
+    width: 100%; /* Full width on mobile */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px; /* Reduce padding for smaller screens */
+        max-width: 95%; /* Allow more width on smaller screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller heading on mobile */
+    }
+
+    p {
+        font-size: 1em; /* Smaller paragraph font size */
+    }
+
+    button {
+        padding: 8px 16px; /* Adjust button size */
+        font-size: 14px; /* Smaller button text */
+    }
 }
 
 h1 {
