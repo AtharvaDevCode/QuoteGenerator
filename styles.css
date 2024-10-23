@@ -1,6 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Garamond', serif; /* Use a classic font */
+    background-image: url('medieval-bg.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    color: #fff; /* Light text color for contrast */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,22 +13,36 @@ body {
 
 .container {
     text-align: center;
-    background: white;
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 600px; /* Set a max width */
+}
+
+h1 {
+    font-size: 2.5em; /* Increase heading size */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Shadow for a more medieval effect */
+}
+
+p {
+    font-size: 1.2em; /* Increase paragraph font size */
+    margin-bottom: 20px;
 }
 
 button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF;
+    background-color: #9B3C14; /* Medieval color */
     color: white;
     cursor: pointer;
     font-size: 16px;
+    text-transform: uppercase; /* All caps for a classic look */
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #6F2711; /* Darker shade on hover */
 }
