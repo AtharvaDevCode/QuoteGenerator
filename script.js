@@ -1,60 +1,27 @@
-const quotes = [
-    "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
-    "The way to get started is to quit talking and begin doing. - Walt Disney",
-    "Life is what happens when you're busy making other plans. - John Lennon",
-    "You only live once, but if you do it right, once is enough. - Mae West",
-    "In the end, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King Jr.",
-    "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment. - Ralph Waldo Emerson",
-    "If life were predictable it would cease to be life, and be without flavor. - Eleanor Roosevelt",
-    "Do not go where the path may lead, go instead where there is no path and leave a trail. - Ralph Waldo Emerson",
-    "Spread love everywhere you go. Let no one ever come to you without leaving happier. - Mother Teresa",
-    "Always remember that you are absolutely unique. Just like everyone else. - Margaret Mead",
-    "Don't judge each day by the harvest you reap but by the seeds that you plant. - Robert Louis Stevenson",
-    "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
-    "Tell me and I forget. Teach me and I remember. Involve me and I learn. - Benjamin Franklin",
-    "It is during our darkest moments that we must focus to see the light. - Aristotle",
-    "Whoever is happy will make others happy too. - Anne Frank",
-    "Do not let making a living prevent you from making a life. - John Wooden",
-    "Life is either a daring adventure or nothing at all. - Helen Keller",
-    "Only a life lived for others is a life worthwhile. - Albert Einstein",
-    "Go confidently in the direction of your dreams! Live the life you’ve imagined. - Henry David Thoreau",
-    "You miss 100% of the shots you don’t take. - Wayne Gretzky",
-    "Whether you think you can or you think you can’t, you’re right. - Henry Ford",
-    "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
-    "Hardships often prepare ordinary people for an extraordinary destiny. - C.S. Lewis",
-    "Everything you’ve ever wanted is on the other side of fear. - George Addair",
-    "Opportunities don't happen. You create them. - Chris Grosser",
-    "Do what you can, with what you have, where you are. - Theodore Roosevelt",
-    "Dream big and dare to fail. - Norman Vaughan",
-    "It always seems impossible until it's done. - Nelson Mandela",
-    "The only way to do great work is to love what you do. - Steve Jobs",
-    "Don’t watch the clock; do what it does. Keep going. - Sam Levenson",
-    "If you can dream it, you can achieve it. - Zig Ziglar",
-    "Work hard in silence, let your success be your noise. - Frank Ocean",
-    "Act as if what you do makes a difference. It does. - William James",
-    "Keep your face always toward the sunshine—and shadows will fall behind you. - Walt Whitman",
-    "Don’t count the days, make the days count. - Muhammad Ali",
-    "What lies behind us and what lies before us are tiny matters compared to what lies within us. - Ralph Waldo Emerson",
-    "Believe you can and you're halfway there. - Theodore Roosevelt",
-    "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
-    "A person who never made a mistake never tried anything new. - Albert Einstein",
-    "Be the change that you wish to see in the world. - Mahatma Gandhi",
-    "I have not failed. I've just found 10,000 ways that won't work. - Thomas Edison",
-    "Strive not to be a success, but rather to be of value. - Albert Einstein",
-    "Success usually comes to those who are too busy to be looking for it. - Henry David Thoreau",
-    "Do one thing every day that scares you. - Eleanor Roosevelt",
-    "Doubt kills more dreams than failure ever will. - Suzy Kassem",
-    "Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
-    "Stay hungry, stay foolish. - Steve Jobs",
-    "What you get by achieving your goals is not as important as what you become by achieving your goals. - Zig Ziglar",
-    "Push yourself, because no one else is going to do it for you. - Unknown",
-    "Failure is the condiment that gives success its flavor. - Truman Capote",
-];
+// script.js
+const api_url = "https://api.allorigins.win/get?url=" + encodeURIComponent("https://zenquotes.io/api/quotes/");
 
-const quoteElement = document.getElementById("quote");
-const generateBtn = document.getElementById("generate-btn");
+async function getQuotes() {
+  try {
+    const response = await fetch(api_url);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
-generateBtn.addEventListener("click", () => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    quoteElement.textContent = quotes[randomIndex];
-});
+    const fullData = await response.json();
+    // The proxy returns the target data in the 'contents' field
+    const data = JSON.parse(fullData.contents);
+    
+    // Get a random quote from the array
+    const randomIndex = Math.floor(Math.random() * data.length);
+    const quoteData = data[randomIndex];
+    
+    document.getElementById("quote").textContent = `"${quoteData.q}" — ${quoteData.a}`;
+  } catch (error) {
+    console.error("Error fetching quote:", error);
+    document.getElementById("quote").textContent = "Could not fetch quote at the moment.";
+  }
+}
+
+document.getElementById("generate-btn").addEventListener("click", getQuotes);
+
+// Get a quote on page load
+getQuotes();

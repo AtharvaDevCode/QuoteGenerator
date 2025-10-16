@@ -1,9 +1,9 @@
 body {
-    font-family: 'Garamond', serif; /* Use a classic font */
-    background-image: url('bg.jpg'); /* Background image */
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center; /* Center the image */
-    color: #fff; /* Light text color for contrast */
+    font-family: 'Garamond', serif;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,46 +13,45 @@ body {
 
 .container {
     text-align: center;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for base */
-    backdrop-filter: blur(10px); /* Blurs the background behind the container */
-    border-radius: 15px; /* Rounded corners */
-    padding: 40px; /* Generous padding for larger screens */
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8); /* Stronger shadow for depth */
-    max-width: 500px; /* Limit max width for the container */
-    width: 90%; /* Responsive width */
-    margin: 20px auto; /* Center the container with margin */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    max-width: 500px;
+    width: 90%;
+    margin: 20px auto;
 }
 
-/* Responsive styles */
 @media (max-width: 600px) {
     .container {
-        padding: 20px; /* Reduced padding for smaller screens */
-        margin: 10px; /* Reduced margin for mobile */
-        max-width: 90%; /* Keep max width within 90% for mobile */
+        padding: 20px;
+        margin: 10px;
+        max-width: 90%;
     }
 
     h1 {
-        font-size: 1.8em; /* Smaller heading on mobile */
+        font-size: 1.8em;
     }
 
     p {
-        font-size: 1em; /* Smaller paragraph font size */
+        font-size: 1em;
     }
 
     button {
-        padding: 8px 16px; /* Adjust button size */
-        font-size: 14px; /* Smaller button text */
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
 
 h1 {
-    font-size: 2.5em; /* Increase heading size */
+    font-size: 2.5em;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* More prominent shadow */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
 p {
-    font-size: 1.2em; /* Increase paragraph font size */
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
 
@@ -60,14 +59,14 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #9B3C14; /* Medieval color */
+    background-color: #9B3C14;
     color: white;
     cursor: pointer;
     font-size: 16px;
-    text-transform: uppercase; /* All caps for a classic look */
+    text-transform: uppercase;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #6F2711; /* Darker shade on hover */
+    background-color: #6F2711;
 }
