@@ -1,6 +1,6 @@
 # 🧠 Random Quote Generator
 
-A simple and elegant web app that displays random inspirational quotes at the click of a button. Built with HTML, CSS, and JavaScript — powered by the [ZenQuotes API](https://zenquotes.io/).
+A simple and elegant web app that displays random inspirational quotes at the click of a button. Built with HTML, CSS, and JavaScript using [ZenQuotes API](https://zenquotes.io/).
 
 ---
 
