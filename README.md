@@ -2,8 +2,6 @@
 
 A simple and elegant web app that displays random inspirational quotes at the click of a button. Built with HTML, CSS, and JavaScript — powered by the [GoQuotes API](https://goquotes.docs.apiary.io/).
 
-![screenshot](https://via.placeholder.com/800x400.png?text=Quote+Generator+Preview) <!-- Replace with real screenshot if available -->
-
 ---
 
 ## 🚀 Features
